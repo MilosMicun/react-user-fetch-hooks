@@ -1,16 +1,64 @@
-# React + Vite
+# React User & Post Fetch Hooks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mini React project demonstrating **custom hooks** to fetch data from an API and separate **JS logic** from UI components.  
+This project is a practice for **React patterns used in blockchain frontends**.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `useFetchUser` hook – fetches user data (`/users/1`)
+- `useFetchPost` hook – fetches post data (`/posts/1`)
+- Separation of concerns: **hooks contain JS logic**, components handle **rendering**
+- Minimalist UI for fast testing
 
-## React Compiler
+## Folder Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+src/
+├── components/
+│ ├── User.jsx # User component using useFetchUser
+│ └── Post.jsx # Post component using useFetchPost
+├── hooks/
+│ ├── useFetchUser.js
+│ └── useFetchPost.js
+├── App.jsx
+└── main.jsx
 
-## Expanding the ESLint configuration
+bash
+Copy code
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## How to Run
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/MilosMicun/react-user-fetch-hooks.git
+Install dependencies:
+
+bash
+Copy code
+cd react-user-fetch-hooks
+npm install
+Run the dev server:
+
+bash
+Copy code
+npm run dev
+Open the browser at the URL shown (usually http://localhost:5173)
+
+Usage
+The app displays User Info and Post Info fetched from JSONPlaceholder
+
+While fetching, a loading message is displayed
+
+If an error occurs, an error message is shown
+
+Learnings
+How to create custom hooks in React
+
+How to separate JS logic from UI components
+
+Handling loading, error, and data states with hooks
+
+Minimal UI pattern useful for blockchain frontend projects
+
+Author
+Milos Micun
